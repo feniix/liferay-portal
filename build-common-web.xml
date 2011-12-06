@@ -5,6 +5,7 @@
 
 	<target name="clean">
 		<delete dir="docroot/WEB-INF/classes" />
+		<delete dir="docroot/META-INF" />
 		<delete file="${war.file}.war" failonerror="false" />
 
 		<delete>

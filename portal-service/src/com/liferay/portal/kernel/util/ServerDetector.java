@@ -28,6 +28,8 @@ public class ServerDetector {
 
 	public static final String JBOSS_ID = "jboss";
 
+    public static final String JBOSS7_ID = "jboss7";
+
 	public static final String JETTY_ID = "jetty";
 
 	public static final String JONAS_ID = "jonas";
@@ -56,6 +58,10 @@ public class ServerDetector {
 
 	public static boolean isJBoss() {
 		return _instance._jBoss;
+	}
+
+    public static boolean isJBoss7() {
+		return _instance._jBoss7;
 	}
 
 	public static boolean isJetty() {
@@ -102,6 +108,10 @@ public class ServerDetector {
 		else if (_isJBoss()) {
 			_serverId = JBOSS_ID;
 			_jBoss = true;
+		}
+		else if (_isJBoss7()) {
+			_serverId = JBOSS7_ID;
+			_jBoss7 = true;
 		}
 		else if (_isJOnAS()) {
 			_serverId = JONAS_ID;
@@ -194,6 +204,10 @@ public class ServerDetector {
 		return _hasSystemProperty("jboss.home.dir");
 	}
 
+    private boolean _isJBoss7() {
+		return _hasSystemProperty("jboss.server.name");
+	}
+
 	private boolean _isJetty() {
 		return _hasSystemProperty("jetty.home");
 	}
@@ -230,6 +244,7 @@ public class ServerDetector {
 	private boolean _geronimo;
 	private boolean _glassfish;
 	private boolean _jBoss;
+	private boolean _jBoss7;
 	private boolean _jetty;
 	private boolean _jonas;
 	private boolean _oc4j;

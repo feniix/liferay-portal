@@ -196,6 +196,7 @@ public class BaseDeployer implements Deployer {
 		if (!appServerType.equals(ServerDetector.GERONIMO_ID) &&
 			!appServerType.equals(ServerDetector.GLASSFISH_ID) &&
 			!appServerType.equals(ServerDetector.JBOSS_ID) &&
+            !appServerType.equals(ServerDetector.JBOSS7_ID) &&
 			!appServerType.equals(ServerDetector.JONAS_ID) &&
 			!appServerType.equals(ServerDetector.JETTY_ID) &&
 			!appServerType.equals(ServerDetector.OC4J_ID) &&
